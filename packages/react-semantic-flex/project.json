@@ -37,7 +37,7 @@
         "format": ["esm", "cjs"],
         "assets": [
           {
-            "glob": "packages/react-semantic-flex/README.md",
+            "glob": "README.md",
             "input": ".",
             "output": "."
           }
