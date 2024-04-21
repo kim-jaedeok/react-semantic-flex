@@ -1,0 +1,12 @@
+{
+  "name": "react-semantic-flex",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaedeok0/react-semantic-flex",
+    "directory": "packages/react-semantic-flex"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0"
+  }
+}
