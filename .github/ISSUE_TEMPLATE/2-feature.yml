@@ -1,0 +1,51 @@
+name: 🚀 Feature Request
+title: "Feat: "
+description: This form is to request new behavior in react-semantic-flex.
+labels: ["implementation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to submit a feature request!
+        🙏 We appreciate your input and apologize for any inconvenience you may have experienced.
+
+        To better assist you, we kindly ask for your cooperation in providing detailed information about the feature you're requesting.
+        Understanding the specifics of your request will greatly aid us in implementing it effectively and efficiently.
+        We value your time and want to ensure that we address your needs adequately.
+  - type: textarea
+    attributes:
+      label: Summary
+      description: Brief explanation of the feature.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Motivation
+      description: |
+        What is the purpose behind this proposal? What are the use cases it aims to support? What outcome do we expect to achieve?
+
+        When providing your explanation, please emphasize the motivation behind your feature request.
+        This will enable us to explore alternative solutions if the request is not accepted.
+        In other words, please outline the constraints or challenges you are trying to address without being overly tied to a specific solution.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Detailed design
+      description: |
+        This section constitutes the core of the feature request.
+        Please provide a detailed explanation of the design that is comprehensible to individuals familiar with react-semantic-flex.
+        It should be informative enough for someone experienced in implementation to be able to carry it out.
+        Be sure to cover specific scenarios, including edge cases, and include examples that demonstrate how the feature would be utilized.
+        Additionally, if there are any newly introduced terms or concepts, kindly provide their definitions within this section.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Alternatives
+      description: What other designs have been considered? What is the impact of not doing this?
+      render: text
+    validations:
+      required: false

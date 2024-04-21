@@ -1,0 +1,72 @@
+{
+  "name": "playground",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/playground/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project playground --web",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/playground/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "configFile": "packages/playground/vite.config.ts"
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/playground",
+        "configFile": "packages/playground/vite.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "playground:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "playground:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "playground:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "playground:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "playground:build:development"
+        },
+        "production": {
+          "buildTarget": "playground:build:production"
+        }
+      }
+    }
+  }
+}

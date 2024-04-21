@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "exodiusstudios.comment-anchors",
+    "deepscan.vscode-deepscan",
+    "amazonwebservices.codewhisperer-for-command-line-companion",
+    "streetsidesoftware.code-spell-checker",
+    "shardulm94.trailing-spaces",
+    "dbaeumer.vscode-eslint"
+  ]
+}

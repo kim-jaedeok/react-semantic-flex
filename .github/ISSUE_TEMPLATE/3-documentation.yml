@@ -1,0 +1,30 @@
+name: 📖 Documentation issue
+title: "Docs: "
+description: This form is for sending feedback in react-semantic-flex.
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reaching out to us regarding documentation updates!
+        🙏 We appreciate your feedback and apologize for any inconvenience caused.
+
+        In order to assist you better, we kindly request your cooperation in providing detailed information about the documentation updates you are requesting.
+        Sharing specific details will greatly help us in implementing the changes effectively and efficiently.
+        We value your time and strive to meet your needs effectively. Your input is invaluable in ensuring that our documentation remains up-to-date and helpful.
+  - type: checkboxes
+    attributes:
+      label: Documentation issue
+      options:
+        - label: Reporting a typo
+        - label: Reporting a documentation bug
+        - label: Documentation improvement
+        - label: Documentation feedback
+  - type: input
+    attributes:
+      label: Is there a specific documentation page you are reporting?
+      description: Enter the URL or documentation section here.
+  - type: input
+    attributes:
+      label: Additional context or description
+      description: Provide any additional details here as needed.
