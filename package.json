@@ -7,7 +7,13 @@
     "type": "git",
     "url": "https://github.com/jaedeok0/react-semantic-flex"
   },
+  "packageManager": "pnpm@9.0.6",
+  "engines": {
+    "node": ">=20.9.0 <21.0.0"
+  },
+  "engineStrict": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "start": "nx run playground:serve",
     "prettify": "prettier --write \"packages/**/src/**/*.(ts|tsx|css|json)\"",
     "lint": "nx run-many -t lint --fix",
