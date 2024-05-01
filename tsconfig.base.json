@@ -16,7 +16,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "react-semantic-flex": ["packages/react-semantic-flex/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
