@@ -34,6 +34,7 @@
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "compiler": "babel",
         "generateExportsField": true,
+        "extractCss": false,
         "format": ["esm", "cjs"],
         "assets": [
           {
