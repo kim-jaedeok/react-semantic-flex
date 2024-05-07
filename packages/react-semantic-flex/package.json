@@ -6,6 +6,15 @@
     "url": "https://github.com/jaedeok0/react-semantic-flex",
     "directory": "packages/react-semantic-flex"
   },
+  "keywords": [
+    "react",
+    "semantic",
+    "flex",
+    "typescript",
+    "component",
+    "layout",
+    "tag"
+  ],
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
   },
