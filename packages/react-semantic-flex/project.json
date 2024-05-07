@@ -32,7 +32,7 @@
         "entryFile": "packages/react-semantic-flex/src/index.ts",
         "external": ["react", "react-dom", "react/jsx-runtime"],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "compiler": "babel",
+        "compiler": "tsc",
         "generateExportsField": true,
         "extractCss": false,
         "format": ["esm", "cjs"],
