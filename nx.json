@@ -68,5 +68,17 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     }
+  },
+  "release": {
+    "projectsRelationship": "independent",
+    "releaseTagPattern": "{projectName}@{version}",
+    "changelog": {
+      "projectChangelogs": {
+        "createRelease": "github"
+      }
+    },
+    "version": {
+      "conventionalCommits": true
+    }
   }
 }
