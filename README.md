@@ -7,7 +7,21 @@ aren't you create style sheets and write class names, attributes, and import sta
 
 this will free you from troublesome work.
 
-# Usage
+## Install
+
+```
+npm install react-semantic-flex
+```
+
+```
+yarn add react-semantic-flex
+```
+
+```
+pnpm add react-semantic-flex
+```
+
+## Usage
 
 use `Flex` component and send flex-related properties which you want. (`display: flex;` is applied by default.)
 
