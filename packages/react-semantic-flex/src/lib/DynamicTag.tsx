@@ -1,22 +1,22 @@
-import { ForwardedRef, HTMLProps, forwardRef } from "react";
+import React, { ComponentPropsWithRef, ElementType, forwardRef } from "react";
+import { SemanticComponentProps } from "../types/semanticComponentProps";
+import { TagName } from "../types/tagName";
 
-import { createElement } from "react";
-
-export type TagName = keyof HTMLElementTagNameMap;
-export interface DynamicTagProps<T extends HTMLElement["tagName"] = "div">
-  extends HTMLProps<T> {
-  tagName?: T;
-}
+type DynamicTag = (<T extends TagName = "div">(
+  props: SemanticComponentProps<T>,
+) => React.ReactElement | null) & {
+  displayName?: string;
+};
 
 export const DynamicTag = forwardRef(
-  <T extends TagName = "div">(
-    props: DynamicTagProps<T>,
-    ref: ForwardedRef<HTMLElementTagNameMap[T]>,
+  <E extends ElementType = "div">(
+    { tagName, ...properties }: SemanticComponentProps<E>,
+    ref: ComponentPropsWithRef<E>["ref"],
   ) => {
-    const { tagName = "div", children, ...properties } = props;
+    const Tag = tagName || "div";
 
-    return createElement(tagName, { ...properties, ref }, children);
+    return <Tag {...properties} ref={ref} />;
   },
-);
+) as DynamicTag;
 
 DynamicTag.displayName = "DynamicTag";

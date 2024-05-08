@@ -1,8 +1,16 @@
-import { CSSProperties, ForwardedRef, forwardRef, useMemo } from "react";
-import { DynamicTag, DynamicTagProps, TagName } from "./DynamicTag";
+import {
+  CSSProperties,
+  ComponentPropsWithRef,
+  ElementType,
+  forwardRef,
+  useMemo,
+} from "react";
+import { DynamicTag } from "./DynamicTag";
 
 import classNames from "classnames/bind";
 import styles from "./Flex.module.scss";
+import { SemanticComponentProps } from "../types/semanticComponentProps";
+import { TagName } from "../types/tagName";
 
 const cx = classNames.bind(styles);
 
@@ -24,11 +32,20 @@ export type SupportedFlexProperty = Pick<
   | "gap"
 >;
 
-type FlexProps<T extends TagName> = SupportedFlexProperty &
-  Omit<DynamicTagProps<T>, "ref">;
+type FlexProps<E extends ElementType> = Omit<
+  SemanticComponentProps<E>,
+  "style"
+> &
+  SupportedFlexProperty;
+
+type Flex = (<T extends TagName = "div">(
+  props: FlexProps<T>,
+) => React.ReactElement | null) & {
+  displayName?: string;
+};
 
 export const Flex = forwardRef(
-  <T extends TagName>(
+  <E extends ElementType>(
     {
       children,
       className,
@@ -47,8 +64,8 @@ export const Flex = forwardRef(
       justifyItems,
       justifySelf,
       ...rest
-    }: FlexProps<T>,
-    ref: ForwardedRef<HTMLElementTagNameMap[T]>,
+    }: Omit<SemanticComponentProps<E>, "style"> & SupportedFlexProperty,
+    ref: ComponentPropsWithRef<E>["ref"],
   ) => {
     const memoizedFlexProperty = useMemo<SupportedFlexProperty>(
       () =>
@@ -91,7 +108,7 @@ export const Flex = forwardRef(
     );
 
     return (
-      <DynamicTag
+      <DynamicTag<TagName>
         ref={ref}
         className={cx("flex", className)}
         style={memoizedFlexProperty}
@@ -101,6 +118,4 @@ export const Flex = forwardRef(
       </DynamicTag>
     );
   },
-);
-
-Flex.displayName = "Flex";
+) as Flex;
