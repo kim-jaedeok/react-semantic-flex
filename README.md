@@ -62,7 +62,7 @@ function Component() {
 }
 ```
 
-of course, you may want to use `Flex` with not-flex-related attributes. `Flex` also support `className`.
+of course, you may want to styling `Flex` with not-flex-related attributes. `Flex` also support `className`.
 
 ```typescript
 import { Flex } from "react-semantic-flex";
