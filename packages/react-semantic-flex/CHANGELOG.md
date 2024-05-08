@@ -1,3 +1,20 @@
+## 0.2.0-0 (2024-05-08)
+
+
+### 🚀 Features
+
+- support attribute type narrowing by tagName ([#8](https://github.com/jaedeok0/react-semantic-flex/pull/8))
+
+
+### 🩹 Fixes
+
+- build configuration and change compiler ([#6](https://github.com/jaedeok0/react-semantic-flex/pull/6))
+
+
+### ❤️  Thank You
+
+- 김재덕 @jaedeok0
+
 ## 0.1.0-0 (2024-05-07)
 
 
